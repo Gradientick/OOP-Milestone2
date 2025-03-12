@@ -1,0 +1,263 @@
+/* src/styles.css */
+
+/* ====================
+   General & Reset Styles
+   ==================== */
+
+   body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* More professional font */
+    margin: 0; /* Remove default body margins */
+    padding: 0;
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Dark gray text for readability */
+    line-height: 1.6; /* Improve readability */
+}
+
+/* Basic reset for consistent spacing */
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+/* ====================
+   Form Styles
+   ==================== */
+
+form {
+    max-width: 400px; /* Limit form width */
+    margin: 20px auto; /* Center the form */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+form div {
+    margin-bottom: 15px; /* Consistent spacing between form elements */
+}
+
+label {
+    display: block;
+    margin-bottom: 6px; /* Space between label and input */
+    font-weight: bold;
+    color: #555; /* Slightly darker label color */
+}
+
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%; /* Full width */
+    padding: 10px; /* More padding for better touch targets */
+    border: 1px solid #ddd; /* Lighter border */
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-size: 16px; /* Larger font size for inputs */
+    transition: border-color 0.3s ease; /* Smooth border transition on focus */
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: #007bff; /* Highlight on focus */
+    outline: none; /* Remove default focus outline */
+}
+
+select {
+    /* Style the select dropdown arrow (cross-browser) */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 5'%3E%3Cpath fill='%23333' d='M0 0l4 4 4-4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 8px 5px;
+    padding-right: 30px; /* Make space for the arrow */
+}
+
+
+/* ====================
+   Button Styles
+   ==================== */
+
+button {
+    display: inline-block; /* Allow setting width and padding */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Remove underlines from buttons that are used as links */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* ====================
+    Error Message Styles
+   ==================== */
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+/* ====================
+   Container Styles (e.g., for pages, sections)
+   ==================== */
+
+.container {
+    max-width: 1200px;  /* Or whatever your desired maximum width is */
+    margin: 0 auto;
+    padding: 20px;
+}
+/* ====================
+    Loading indicator Styles
+   ==================== */
+.loading-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* Full viewport height */
+    font-size: 24px;
+    color: #888;
+}
+/* ====================
+   Heading Styles
+   ==================== */
+
+h1, h2, h3 {
+	margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #444;
+	margin-bottom: 1rem;
+}
+
+/* ====================
+   Utility Classes (Optional, but useful)
+   ==================== */
+
+.text-center {
+    text-align: center;
+}
+
+.margin-top {
+    margin-top: 20px;
+}
+
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto; /* More top margin */
+    padding: 30px;       /* More padding */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+}
+
+
+.form-group {
+    margin-bottom: 20px; /* More spacing between form elements */
+}
+
+.form-control {
+    /* (Input styles are already covered) */
+    width: 100%; /* Ensure inputs take full width */
+    padding: 12px;  /* Slightly more padding */
+    font-size: 1rem;
+}
+
+.btn {
+    /* (Button styles are mostly covered) */
+    display: inline-block;
+    padding: 12px 24px; /* Slightly larger buttons */
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none; /* Remove underlines */
+    outline: none;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Add a subtle shadow */
+    transition: background-color 0.3s ease;
+}
+
+
+.btn-secondary {
+    background-color: #6c757d; /* Gray color */
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn:hover { /* General hover style for all buttons */
+	background-color: #0056b3;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px; /* Spacing above the register button */
+}
+.register-link p{
+	margin-bottom: 0.5rem;
+}
+
+/* ====================
+   Register Page Specific Styles
+   ==================== */
+
+   .register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.register-form {
+    /* Form styles inherited from general form styles */
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+.login-link p{
+	margin-bottom: 0.5rem;
+}
+
+/* styles.css */
+
+/* ... (other styles) ... */
+.loading-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Adjust as needed */
+    font-size: 1.5rem;
+    color: #888;
+  }
