@@ -225,7 +225,7 @@ h2 {
 .nav-links-signout{
     color: white;
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 2rem 1rem 1rem;
     display: block; /* Make the links take up the full height */
     transition: background-color 0.3s ease;
 	border: none;

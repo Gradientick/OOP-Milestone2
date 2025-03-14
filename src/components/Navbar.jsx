@@ -89,6 +89,13 @@ function Navbar() {
                                     </Link>
                                 </li>
                             )}
+                            {userRole === 'admin' && (
+                                <li className="nav-item">
+                                    <Link to="/register-employee" className="nav-links">
+                                        Register Employee
+                                    </Link>
+                                </li>
+                            )}
                             {userRole === 'hr' && (
                                 <li className="nav-item">
                                     <Link to="/hr" className="nav-links"> {/* Example HR link */}

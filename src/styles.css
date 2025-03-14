@@ -261,3 +261,322 @@ h2 {
     font-size: 1.5rem;
     color: #888;
   }
+
+  .employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.employee-table th,
+.employee-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.employee-table th {
+    background-color: #f2f2f2;
+}
+
+.employee-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.employee-table tr:hover {
+    background-color: #ddd;
+}
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Modal Styles
+==================== */ 
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top */
+    }
+    
+    .modal-content {
+        background-color: white;
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+        max-width: 800px;  /*  Fixed max-width, good for larger screens */
+        width: 90%; /* Responsive width.  Will take up 90% up to 800px. */
+        max-height: 80vh;   /* Limit height, use scroll */
+        overflow-y: auto;    /*  Vertical scroll if content overflows */
+        padding: 30px;     /*  More generous padding */
+        position: relative; /* For close button positioning */
+    }
+    
+    
+    .modal-header {
+        display: flex;
+        justify-content: space-between; /*  Close button to the right */
+        align-items: center;         /*  Vertically center title and button */
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 15px;      /*  More space below the header */
+        margin-bottom: 25px;
+    }
+    
+    .modal-header h2 {
+        margin: 0;
+        font-size: 1.75rem; /* Larger heading */
+        color: #333;
+    }
+    
+    .close-button {
+        background: none;
+        border: none;
+        font-size: 2rem;  /* Larger close button */
+        cursor: pointer;
+        color: #aaa;       /* Light gray */
+        transition: color 0.2s ease; /* Smooth color transition */
+        padding: 0;        /*  Remove default padding */
+        line-height: 1;
+    }
+    
+    .closeButton:hover,
+.closeButton:focus {  /*  Focus state for accessibility */
+    color: #000;       /* Darker on hover/focus */
+    outline: none;    /*  Remove default focus outline */
+    text-decoration: none; /* Remove underline */
+}
+    
+.modalFooter {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;      /* More space above the footer */
+    margin-top: 25px;      /* More space below the content */
+    text-align: right;    /*  Align button to the right */
+}
+    .modal-body p{
+        margin: 8px 0;    /*  Vertical spacing between paragraphs */
+        line-height: 1.5; /*  Improve readability */
+        font-size: 1rem;
+    }
+
+    .modalBody p strong {
+        /* Style for label.  Could use a <label> instead. */
+        display: inline-block; /*  Allows setting width */
+        width: 180px;        /*  Consistent label width */
+        font-weight: bold;
+        margin-right: 10px;  /*  Space between label and value */
+        text-align: right;   /* Right-align labels */
+    }
+    
+    /* Style the form inside the modal */
+    .modalBody form {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: auto 1fr; /* Label on the left, input on the right */
+        gap: 15px 20px; /* More generous gap */
+        align-items: center;  /* Vertically center items in the grid */
+    
+    }
+    .modalBody form label{
+        text-align: right;
+     }
+    
+     .modalBody input[type="number"] {
+        width: 100%; /* Use available width */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+
+    .modalBody button[type="submit"]{
+        grid-column: span 2; /* Added this to center the button. */
+        justify-self: center;
+      }
+
+      @media (max-width: 768px) {
+        .modalContent {
+            width: 95%; /* More width on smaller screens */
+            padding: 20px;
+        }
+       .modalBody form{
+            grid-template-columns: 1fr;
+       }
+       .modalBody form label{
+            text-align: left;
+       }
+       .modalBody button[type="submit"]{
+            grid-column: span 1;
+            justify-self: stretch;
+        }
+    }
+
+    /* Form Styles (specifically for the hours worked form) */
+.hoursWorkedForm {
+    margin-top: 20px; /* Space above the form */
+    display: grid;
+    grid-template-columns: auto 1fr; /* Label, then input */
+    gap: 10px 20px;      /* Vertical and horizontal gaps */
+    align-items: center;    /* Vertically center items */
+  }
+  
+  .hoursWorkedForm label {
+      text-align: right;       /* Right-align the label */
+      font-weight: bold;    /* Make the label bold */
+      padding-right: 10px;   /* Add some padding */
+      /* Use the same styles as your other labels for consistency */
+      display: block;       /* Important: make labels block-level */
+      margin-bottom: 5px;    /* Space below label */
+      color: #555;         /* Consistent with other labels */
+  }
+  
+  .hoursWorkedForm input[type="number"] {
+      width: 100%;        /* Full width of its column */
+      padding: 10px;     /* Good padding */
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;     /* Consistent font size */
+      box-sizing: border-box; /* Include padding/border in width */
+  }
+  .hoursWorkedForm input[type="number"]:focus{
+       border-color: #007bff; /* Highlight on focus */
+      outline: none;
+  }
+  
+  /* Style the calculate button */
+  .hoursWorkedForm button {
+      grid-column: span 2;      /* Make the button span both columns */
+      justify-self: center;   /* Center the button horizontally */
+      /* Use your existing .btn and .btn-primary classes for consistency */
+      /* If you don't have those, use these styles: */
+      /*
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      */
+  }
+
+  .payslip-section {
+    margin: 2rem 0;
+}
+
+.payslip-list {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.payslip-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    transition: transform 0.2s;
+}
+
+.payslip-card:hover {
+    transform: translateY(-2px);
+}
+
+.payslip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.period {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.download-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.download-btn:hover {
+    background: #45a049;
+}
+
+.payslip-details {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-item.total {
+    font-weight: 600;
+    color: #27ae60;
+}
+
+.no-payslips {
+    text-align: center;
+    color: #7f8c8d;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.payslip-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.payslip-table th, .payslip-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.payslip-table th {
+    background-color: #f8f9fa;
+}
+
+.download-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #45a049;
+}
+
+.no-payslips {
+    color: #6c757d;
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
